@@ -1,0 +1,12 @@
+.tech-tag {
+  display: inline-block;
+  background-color: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+  font-family: var(--font-mono);
+  transition: background-color var(--transition), color var(--transition);
+}

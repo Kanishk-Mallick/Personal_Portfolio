@@ -1,0 +1,54 @@
+[
+  {
+    "id": "yt-study-mode",
+    "title": "YouTube Study Mode",
+    "description": "A Chrome Extension that removes distractions on YouTube to help students stay focused while studying.",
+    "techStack": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Chrome Extension Manifest V3",
+      "Chrome Storage API",
+      "Chrome Notifications API"
+    ],
+    "image": "/assets/ytstudymode.png",
+    "link": null,
+    "details": "YouTube Study Mode is a productivity-focused Chrome Extension designed for students. It detects when you are on YouTube and surgically removes distracting elements \u2014 recommendations, comments, autoplay, and the sidebar \u2014 while keeping the core video player intact. The extension uses Chrome's Storage API to persist preferences and Notifications API to remind you to take breaks."
+  },
+  {
+    "id": "worksphere",
+    "title": "WorkSphere",
+    "description": "WorkSphere is a MERN Stack based collaborative workspace where users can create workspaces, manage boards and collaborate with other members in real time.",
+    "techStack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Socket.io",
+      "JWT",
+      "Mongoose",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "image": "/assets/worksphere.png",
+    "link": "https://worksphere-theta.vercel.app/",
+    "details": "WorkSphere is a full-stack collaborative workspace application built on the MERN stack. It supports real-time collaboration via Socket.io, allowing multiple users to work on the same boards simultaneously. Authentication is handled with JWT, and data is persisted in MongoDB via Mongoose. The frontend is built with React and deployed on Vercel, while the backend runs on Node.js and Express."
+  },
+  {
+    "id": "portfolio-website",
+    "title": "Personal Portfolio Website",
+    "description": "A personal portfolio web application converted from static HTML/CSS into a dynamic React SPA with client-side routing, theme persistence, and interactive components.",
+    "techStack": [
+      "React",
+      "Vite",
+      "React Router",
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "image": "/assets/ytstudymode-Kanishk.png",
+    "link": null,
+    "details": "This portfolio website was originally created as a multi-page static site and transformed into a full React Single Page Application. Features include dark/light mode toggling with localStorage persistence, controlled contact form with live validation, dynamic route rendering via useParams, responsive navigation with resize cleanup, and multi-level prop drilling."
+  }
+]

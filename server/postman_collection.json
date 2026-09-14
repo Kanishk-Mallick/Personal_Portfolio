@@ -1,0 +1,247 @@
+{
+  "info": {
+    "name": "Personal Portfolio API (Assignment 3)",
+    "_postman_id": "portfolio-api-v1",
+    "description": "Postman collection covering all 7 backend endpoints (B1-B7) including validation success and failure cases.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "B1 - Health Check (GET /)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            ""
+          ]
+        },
+        "description": "Confirms backend API is running and returns HTTP 200 with status ok."
+      }
+    },
+    {
+      "name": "B2 - Get All Projects (GET /api/projects)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/projects",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "projects"
+          ]
+        },
+        "description": "Returns HTTP 200 with JSON array of all projects."
+      }
+    },
+    {
+      "name": "B3 - Get Single Project - Success (GET /api/projects/worksphere)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/projects/worksphere",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "projects",
+            "worksphere"
+          ]
+        },
+        "description": "Returns HTTP 200 with project details for valid ID."
+      }
+    },
+    {
+      "name": "B3 - Get Single Project - 404 Not Found (GET /api/projects/invalid-id)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/projects/invalid-id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "projects",
+            "invalid-id"
+          ]
+        },
+        "description": "Returns HTTP 404 with JSON error for non-existent project ID."
+      }
+    },
+    {
+      "name": "B4 - Submit Contact - Success 201 (POST /api/contact)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alice Johnson\",\n  \"email\": \"alice@example.com\",\n  \"message\": \"Hello Kanishk! I am interested in collaborating on a full stack project.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/contact",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "contact"
+          ]
+        },
+        "description": "Valid submission persists to server/data/submissions.json and returns HTTP 201."
+      }
+    },
+    {
+      "name": "B4 - Submit Contact - Failure: Missing Name 400 (POST /api/contact)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"\",\n  \"email\": \"alice@example.com\",\n  \"message\": \"Hello Kanishk! Testing missing name validation.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/contact",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "contact"
+          ]
+        },
+        "description": "Returns HTTP 400 when name is missing."
+      }
+    },
+    {
+      "name": "B4 - Submit Contact - Failure: Invalid Email 400 (POST /api/contact)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Bob Smith\",\n  \"email\": \"bob-invalid-email\",\n  \"message\": \"Hello Kanishk! Testing invalid email validation.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/contact",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "contact"
+          ]
+        },
+        "description": "Returns HTTP 400 when email format is invalid."
+      }
+    },
+    {
+      "name": "B4 - Submit Contact - Failure: Short Message 400 (POST /api/contact)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Charlie\",\n  \"email\": \"charlie@example.com\",\n  \"message\": \"Short\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/contact",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "contact"
+          ]
+        },
+        "description": "Returns HTTP 400 when message is under 10 characters."
+      }
+    },
+    {
+      "name": "B5 - List All Submissions (GET /api/contact)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/contact",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "contact"
+          ]
+        },
+        "description": "Open verification endpoint returning all stored contact submissions."
+      }
+    },
+    {
+      "name": "B6 - Undefined Route 404 (GET /api/doesnotexist)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/doesnotexist",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "doesnotexist"
+          ]
+        },
+        "description": "Catch-all 404 handler returns HTTP 404 with JSON error body."
+      }
+    }
+  ]
+}

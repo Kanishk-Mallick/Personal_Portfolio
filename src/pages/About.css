@@ -1,0 +1,93 @@
+.about-bio {
+  margin-bottom: 2.5rem;
+}
+
+.about-subheading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-heading);
+}
+
+.about-bio p {
+  margin-bottom: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.75;
+  text-align: justify;
+}
+
+.about-education {
+  margin-bottom: 2.5rem;
+}
+
+.education-table-wrapper {
+  overflow-x: auto;
+}
+
+.education-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.education-table th,
+.education-table td {
+  border: 2px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.education-table th {
+  background-color: var(--color-surface-alt);
+  font-weight: 600;
+  color: var(--color-heading);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.education-table td {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.education-table tbody tr:hover td {
+  background-color: var(--color-surface-alt);
+}
+
+.about-hobbies {
+  margin-bottom: 2rem;
+}
+
+.hobbies-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.hobby-item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  cursor: default;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.hobby-item:hover {
+  background-color: var(--color-surface-alt);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .education-table th,
+  .education-table td {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.82rem;
+  }
+}

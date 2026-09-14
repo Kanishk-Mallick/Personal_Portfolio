@@ -1,0 +1,40 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.not-found__content {
+  max-width: 480px;
+}
+
+.not-found__code {
+  font-size: clamp(5rem, 15vw, 8rem);
+  font-weight: 900;
+  color: var(--color-border);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+}
+
+.not-found__heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.75rem;
+}
+
+.not-found__message {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+.not-found__btn {
+  font-size: 0.95rem;
+  padding: 0.7rem 1.75rem;
+}
